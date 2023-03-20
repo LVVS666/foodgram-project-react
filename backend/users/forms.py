@@ -28,10 +28,6 @@ class GroupAdminForm(forms.ModelForm):
         return super(GroupAdminForm, self).save()
 
     def save_m2m(self):
-        """
-        Inasmuch where is only 1 group - STAFF - changing it for user means
-        is_staff = reversed is_staff.
-        """
         for user in self.instance.user_set.all():
             user.is_staff = not user.is_staff
             user.save()
