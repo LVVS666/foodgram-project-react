@@ -40,12 +40,6 @@ class Follow(models.Model):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    """
-    Default User model, but used custom manager, email as login field and
-    custom set of required fields for registration.
-    Also changed options of fields such as email and first_name length and
-    others.
-    """
     date_joined = models.DateTimeField(
         auto_now_add=True,
         verbose_name='Дата регистрации'
