@@ -1,4 +1,4 @@
-![example workflow](https://github.com/lvvs666/foodgram-project-react/actions/workflows/foodgram_workflow.yaml/badge.svg)
+![example workflow](https://github.com/lvvs666/foodgram-project-react/actions/workflows/foodgram_workflow.yml/badge.svg)
 
 # Учебный проект  FOODGRAM
 http://158.160.11.226/redoc/
