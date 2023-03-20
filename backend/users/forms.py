@@ -26,7 +26,6 @@ class GroupAdminForm(forms.ModelForm):
     def save(self, *args, **kwargs):
         instance = super(GroupAdminForm, self).save()
         self.save_m2m()
-
         return instance
 
     def save_m2m(self):
