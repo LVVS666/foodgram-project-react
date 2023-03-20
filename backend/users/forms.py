@@ -7,6 +7,7 @@ User = get_user_model()
 
 
 class GroupAdminForm(forms.ModelForm):
+    """Form for change user's groups."""
     users = forms.ModelMultipleChoiceField(
         queryset=User.objects.all(),
         required=False,
