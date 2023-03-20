@@ -7,7 +7,6 @@ from rest_framework.serializers import ModelSerializer, SerializerMethodField
 from rest_framework.validators import UniqueTogetherValidator, ValidationError
 
 from users.models import Follow
-
 from .fields import Base64ImageField
 from .mixins import CartFavoriteFlagsMixin
 from .models import Ingredient, IngredientAmount, Recipe, Tag
