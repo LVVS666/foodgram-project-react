@@ -33,7 +33,8 @@ INSTALLED_APPS = [
     'djoser',
     'debug_toolbar',
     'django_filters',
-    'corsheaders'
+    'corsheaders',
+    'v1',
 ]
 
 MIDDLEWARE = [
