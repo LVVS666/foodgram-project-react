@@ -5,6 +5,7 @@ from djoser.serializers import UserSerializer as BaseUserSerializer
 from rest_framework.fields import ReadOnlyField
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
 from rest_framework.validators import UniqueTogetherValidator, ValidationError
+
 from users.models import Follow
 
 from .fields import Base64ImageField
