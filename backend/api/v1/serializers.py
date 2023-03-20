@@ -15,11 +15,6 @@ User = get_user_model()
 
 
 class UserSerializer(BaseUserSerializer):
-    """
-    Serializer for User instance. Also used as nested serializer at Recipe's
-    serializer (read and create).
-    All fields excluding "is_subscribed" are required for deserializing.
-    """
     is_subscribed = SerializerMethodField()
 
     class Meta:
