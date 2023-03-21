@@ -73,6 +73,7 @@ jobs:
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
             echo DJANGO_SECRET_KEY=${{ secrets.DJANGO_KEY }} >> .env
             sudo docker-compose up -d
+            docker-compose exec backend python manage.py makemigrations
             docker-compose exec backend python manage.py migrate
             docker-compose exec backend python manage.py collectstatic --no-input
 
