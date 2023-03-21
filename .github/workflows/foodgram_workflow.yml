@@ -61,7 +61,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
             sudo docker-compose stop
-            sudo docker-conpose rm -f
+            sudo docker-compose rm -f
             sudo docker image prune -af
             rm .env
             touch .env
@@ -71,8 +71,10 @@ jobs:
             echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
             echo DB_HOST=${{ secrets.DB_HOST }} >> .env
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
-            echo DJANGO_SECRET_KEY=${{ secrets.DJANGO_KEY }} >> .env
             sudo docker-compose up -d
+            docker-compose exec backend python manage.py migrate
+            docker-compose exec backend python manage.py collectstatic --no-input
+
   send_message:
     runs-on: ubuntu-latest
     needs: deploy

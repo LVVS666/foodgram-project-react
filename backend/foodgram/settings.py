@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'api.apps.ApiConfig',
+    'api.v1',
     'users.apps.UsersConfig',
     'rest_framework',
     'drf_yasg',
@@ -34,7 +35,6 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'django_filters',
     'corsheaders',
-    'v1',
 ]
 
 MIDDLEWARE = [
