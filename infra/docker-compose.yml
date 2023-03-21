@@ -10,6 +10,7 @@ services:
       - ./.env
 
   backend:
+    platform: linux/amd64
     image: lvvs666/foodgram_backend:latest
     restart: always
     volumes:
@@ -21,6 +22,7 @@ services:
       - ./.env
 
   frontend:
+    platform: linux/amd64
     image: lvvs666/foodgram_backend:latest
     volumes:
       - ../frontend/:/backend/result_build/
@@ -44,4 +46,3 @@ volumes:
   postgres_data:
   static_value:
   media_value:
-
