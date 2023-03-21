@@ -27,3 +27,4 @@ docker-compose exec foodgram_backend python manage.py collectstatic --no-input  
 ## Документация
 После запуска проекта документация будет доступна по адресу: 
 (http://158.160.11.226/redoc/)
+

@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'django_filters',
     'corsheaders',
-    'api.v1',
+    'v1',
 ]
 
 MIDDLEWARE = [
