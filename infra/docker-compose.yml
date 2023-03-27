@@ -20,9 +20,11 @@ services:
       - ./.env
 
   frontend:
-    image: lvvs666/foodgram_backend:latest
+    image: lvvs666/foodgram_frontend:latest
     volumes:
       - ../frontend/:/backend/result_build/
+    depends_on:
+      - backend
 
   nginx:
     image: nginx:1.19.3
@@ -36,7 +38,6 @@ services:
       - media_value:/var/html/media/
     restart: always
     depends_on:
-      - backend
       - frontend
 volumes:
   postgres_data:
