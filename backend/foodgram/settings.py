@@ -9,14 +9,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [
-    '158.160.11.226',
-    'localhost',
-    '127.0.0.1',
-    '[::1]',
-]
+ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -26,7 +21,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'api.apps.ApiConfig',
-    'api.v1',
     'users.apps.UsersConfig',
     'rest_framework',
     'drf_yasg',
@@ -35,6 +29,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'django_filters',
     'corsheaders',
+    'api.v1',
 ]
 
 MIDDLEWARE = [
@@ -189,7 +184,7 @@ DJOSER = {
         'token': 'djoser.serializers.TokenSerializer',
         'token_create': 'djoser.serializers.TokenCreateSerializer',
     },
-    'HIDE_USERS': False  # allow anonymous user to get list of users
+    'HIDE_USERS': False
 }
 
 CORS_URLS_REGEXES = [
