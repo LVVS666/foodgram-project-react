@@ -67,7 +67,6 @@ class RecipeAdmin(ModelAdmin):
 
     def count_favorites(self, obj):
         return obj.favorites.filter(user__is_active=True).count()
-
     count_favorites.short_description = 'В избранном'
 
 
