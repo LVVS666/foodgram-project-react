@@ -1,7 +1,6 @@
 version: '3.3'
 services:
   db:
-    platform: linux/amd64
     image: postgres:13.0-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
@@ -10,7 +9,6 @@ services:
       - ./.env
 
   backend:
-    platform: linux/amd64
     image: lvvs666/foodgram_backend:latest
     restart: always
     volumes:
@@ -22,12 +20,9 @@ services:
       - ./.env
 
   frontend:
-    platform: linux/amd64
     image: lvvs666/foodgram_backend:latest
     volumes:
       - ../frontend/:/backend/result_build/
-    depends_on:
-      - backend
 
   nginx:
     image: nginx:1.19.3
@@ -42,8 +37,8 @@ services:
     restart: always
     depends_on:
       - backend
+      - frontend
 volumes:
   postgres_data:
   static_value:
   media_value:
-
