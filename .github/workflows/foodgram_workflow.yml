@@ -41,18 +41,22 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
 
-      - name: push to DockerHub
+      - name: Push to Docker Hub
         uses: docker/build-push-action@v2
         with:
-          context: ./backend
           push: true
+          context: backend/
           tags: ${{ secrets.DOCKER_USERNAME }}/foodgram_backend:latest
-      - name: push to DockerHub
+          file: backend/Dockerfile
+
+      - name: Push to Docker Hub
         uses: docker/build-push-action@v2
         with:
-          context: ./frontend
           push: true
+          context: frontend/
           tags: ${{ secrets.DOCKER_USERNAME }}/foodgram_frontend:latest
+          file: frontend/Dockerfile
+
 
   deploy:
     runs-on: ubuntu-latest
