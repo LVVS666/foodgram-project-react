@@ -39,6 +39,7 @@ services:
     restart: always
     depends_on:
       - frontend
+
 volumes:
   postgres_data:
   static_value:
