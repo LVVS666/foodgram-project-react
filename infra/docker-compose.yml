@@ -12,8 +12,8 @@ services:
     image: lvvs666/foodgram_backend:latest
     restart: always
     volumes:
-      - static_value:/backend/static/
-      - static_value:/backend/media/
+      - static_value:/app/static/
+      - static_value:/app/media/
     depends_on:
       - db
     env_file:
@@ -22,7 +22,7 @@ services:
   frontend:
     image: lvvs666/foodgram_frontend:latest
     volumes:
-      - ../frontend/:/backend/result_build/
+      - ../frontend/:/app/result_build/
     depends_on:
       - backend
 
