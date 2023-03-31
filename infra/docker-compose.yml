@@ -6,7 +6,7 @@ services:
       - postgres_data:/var/lib/postgresql/data/
     restart: always
     env_file:
-      - ./.env
+      - ./infra/.env
 
   backend:
     image: lvvs666/foodgram_backend:latest
@@ -17,7 +17,7 @@ services:
     depends_on:
       - db
     env_file:
-      - ./.env
+      -./infra/.env
 
   frontend:
     image: lvvs666/foodgram_frontend:latest
