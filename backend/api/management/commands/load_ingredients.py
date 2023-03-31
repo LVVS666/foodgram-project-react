@@ -1,9 +1,9 @@
 import csv
 import os
 
+from api.v1.models import Ingredient
 from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
-from api.v1.models import Ingredient
 
 DATA_ROOT = os.path.join(settings.BASE_DIR, 'data')
 
