@@ -9,7 +9,6 @@ DATA_ROOT = os.path.join(settings.BASE_DIR, 'data')
 
 
 class Command(BaseCommand):
-    help = 'Загрузка данных из ingredients.csv'
 
     def add_arguments(self, parser):
         parser.add_argument('filename', default='ingredients.csv', nargs='?',

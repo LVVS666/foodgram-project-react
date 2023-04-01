@@ -7,7 +7,7 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+SECRET_KEY = 'kek'
 
 DEBUG = True
 
@@ -84,7 +84,7 @@ DATABASES = {
         ),
         'HOST': os.getenv(
             key='DB_HOST',
-            default='database_container'
+            default='db'
         ),
         'PORT': os.getenv(
             key='DB_PORT',
