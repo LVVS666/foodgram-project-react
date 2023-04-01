@@ -70,6 +70,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
+            cd infra
             sudo docker-compose stop
             sudo docker-compose rm -f
             sudo docker image prune -af
